@@ -1,2 +1,8 @@
 *.dll
 *.so
+*.dylib
+ConsoleApp1/bin/Debug/net6.0/runtimes/ios-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a
+ConsoleApp1/bin/Debug/net6.0/runtimes/maccatalyst-x64/native/libMicrosoft.CognitiveServices.Speech.core.a
+ConsoleApp1/bin/Debug/net6.0/runtimes/maccatalyst-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a
+ConsoleApp1/bin/Debug/net6.0/runtimes/iossimulator-x64/native/libMicrosoft.CognitiveServices.Speech.core.a
+ConsoleApp1/bin/Debug/net6.0/runtimes/iossimulator-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a

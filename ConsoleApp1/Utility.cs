@@ -31,7 +31,7 @@ public class DataCleaning {
                         long startTicks = e.Result.OffsetInTicks;
                         long endTicks = startTicks + e.Result.Duration.Ticks;
                         string recognizedText = e.Result.Text;
-                        speechTimestamps.Add((startTicks / 10000000, endTicks / 10000000));
+                        speechTimestamps.Add(((double)startTicks / (double)10000000, (double)endTicks / (double)10000000));
                         Console.WriteLine($"RECOGNIZED: Text={recognizedText}");
                     }
                 };
@@ -71,14 +71,23 @@ public class DataCleaning {
     // Build the ffmpeg command for removing all the timestamps from the audio!
     public static string buildRemovalFFmpegCommand(string inputFilePath, string outputFilePath, List<(double startTicks, double endTicks)> speechTimestamps) {
         string range = "";
-        for (int i=0; i < speechTimestamps.Count; i++) {
-            range+="between(t," + speechTimestamps[i].startTicks + "," + speechTimestamps[i].endTicks + ")";
-            if (i != speechTimestamps.Count -1) {
-                range+="+";
+        for (int i = 0; i < speechTimestamps.Count; i++)
+        {
+            range += "between(t," + speechTimestamps[i].startTicks + "," + speechTimestamps[i].endTicks + ")";
+            if (i != speechTimestamps.Count - 1)
+            {
+                range += "+";
             }
         }
-        return  $"-i {inputFilePath} -af \"aselect='not({range})'\" {outputFilePath}";
+
+        // Wrap the input and output file paths in double quotes
+        string inputPath = $"\"{inputFilePath}\"";
+        string outputPath = $"\"{outputFilePath}\"";
+
+        // Construct the FFmpeg command
+        return $"-i {inputPath} -af \"aselect='not({range})'\" {outputPath}";
     }
+
 
     // FFmpeg Build command for conversion mp3 to wav
     public static string buildWavConversionCommand(string inputFilePath, string outputFilePath) {

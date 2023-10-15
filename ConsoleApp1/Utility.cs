@@ -82,6 +82,6 @@ public class DataCleaning {
 
     // FFmpeg Build command for conversion mp3 to wav
     public static string buildWavConversionCommand(string inputFilePath, string outputFilePath) {
-        return $"-i {inputFilePath} {outputFilePath} ";
+        return $"-i \"{inputFilePath}\" \"{outputFilePath}\"";
     }
 }

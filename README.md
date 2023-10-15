@@ -1,3 +1,8 @@
+**bioacoustic-dataset-cleaner**
+
+- refactoring needed
+
+
 To use:
 
 1. In Program.cs replace rootDirectory with root directory to audio (folder structure should be "root directory" --> species subdirectory --> species audio files

@@ -1,5 +1,6 @@
 **bioacoustic-dataset-cleaner**
 - refactoring needed
+- and to check between repetitive transcription (bioacoustic) vs nonrepetitive transcription (noise)
 - also see if possible to get mfcc directly
 
 

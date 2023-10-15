@@ -1,6 +1,6 @@
 **bioacoustic-dataset-cleaner**
-
 - refactoring needed
+- also see if possible to get mfcc directly
 
 
 To use (build process has not been tested yet but should reasonably work)

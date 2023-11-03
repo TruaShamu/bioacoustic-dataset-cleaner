@@ -2,7 +2,8 @@
 - refactoring needed
 - and to check between repetitive transcription (bioacoustic) vs nonrepetitive transcription (noise)
 - also see if possible to get mfcc directly
-
+- and to store the keys in a KEY VAULT (the way it should be done!!)
+- note this is resource intensive (1 api call / audio sample)
 
 To use (build process has not been tested yet but should reasonably work)
 

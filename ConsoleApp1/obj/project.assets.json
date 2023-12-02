@@ -5,14 +5,10 @@
       "Microsoft.CognitiveServices.Speech/1.32.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {}
         },
         "build": {
           "build/Microsoft.CognitiveServices.Speech.props": {}
@@ -380,14 +376,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -410,14 +402,10 @@
           "NAudio.WinMM": "2.2.1"
         },
         "compile": {
-          "lib/net6.0/NAudio.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/NAudio.dll": {}
         },
         "runtime": {
-          "lib/net6.0/NAudio.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/NAudio.dll": {}
         }
       },
       "NAudio.Asio/2.2.1": {
@@ -427,27 +415,19 @@
           "NAudio.Core": "2.2.1"
         },
         "compile": {
-          "lib/netstandard2.0/NAudio.Asio.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Asio.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/NAudio.Asio.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Asio.dll": {}
         }
       },
       "NAudio.Core/2.2.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/NAudio.Core.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Core.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/NAudio.Core.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Core.dll": {}
         }
       },
       "NAudio.Midi/2.2.1": {
@@ -456,14 +436,10 @@
           "NAudio.Core": "2.2.1"
         },
         "compile": {
-          "lib/netstandard2.0/NAudio.Midi.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Midi.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/NAudio.Midi.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Midi.dll": {}
         }
       },
       "NAudio.Wasapi/2.2.1": {
@@ -472,14 +448,10 @@
           "NAudio.Core": "2.2.1"
         },
         "compile": {
-          "lib/netstandard2.0/NAudio.Wasapi.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Wasapi.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/NAudio.Wasapi.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.Wasapi.dll": {}
         }
       },
       "NAudio.WinMM/2.2.1": {
@@ -489,14 +461,10 @@
           "NAudio.Core": "2.2.1"
         },
         "compile": {
-          "lib/netstandard2.0/NAudio.WinMM.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.WinMM.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/NAudio.WinMM.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/NAudio.WinMM.dll": {}
         }
       },
       "System.Security.AccessControl/4.7.0": {
@@ -506,14 +474,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -525,14 +489,10 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -1149,24 +1109,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\trua\\.nuget\\packages\\": {}
+    "C:\\Users\\topos\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\trua\\jello\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "D:\\Sofia\\Wrapup\\bioacoustic-dataset-cleaner\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "C:\\Users\\trua\\jello\\ConsoleApp1\\ConsoleApp1.csproj",
-      "packagesPath": "C:\\Users\\trua\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\trua\\jello\\ConsoleApp1\\obj\\",
+      "projectPath": "D:\\Sofia\\Wrapup\\bioacoustic-dataset-cleaner\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\topos\\.nuget\\packages\\",
+      "outputPath": "D:\\Sofia\\Wrapup\\bioacoustic-dataset-cleaner\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\trua\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\topos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1200,8 +1162,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -1210,7 +1171,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

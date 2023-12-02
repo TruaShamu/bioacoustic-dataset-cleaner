@@ -1,21 +1,11 @@
 public class Program
 {
-
+    public static string destDirectory = @"D:\Sofia\Wrapup\bioacoustic-dataset-cleaner\TestCase\Done"; // Directory to store cleaned files
     async static Task Main(String[] args)
     {
-        string rootDirectory = @"C:\Users\trua\jello\TestCase";
-        await ProcessSubdirectories(rootDirectory);
-
-        /*string audioFile = @"C:\Users\trua\jello\TestCase\Adelastes hylonomos\7b26770b-bc6f-4034-b465-8c39b0ccc922.wav";
-        List<(double startTicks, double endTicks)> speechTimeStamp = await DataCleaning.ListSpeechTimeStamp(audioFile);
-        foreach (var entry in speechTimeStamp) {
-            Console.WriteLine(entry.startTicks + " "+ entry.endTicks);
-        }*/
-
-
-
-
-
+        string sourceDirectory = @"D:\Sofia\Wrapup\bioacoustic-dataset-cleaner\TestCase"; // Directory to be cleaned
+        Console.WriteLine(sourceDirectory);
+        await ProcessSubdirectories(sourceDirectory);
     }
 
     static async Task ProcessSubdirectories(string rootDirectory)
@@ -34,25 +24,39 @@ public class Program
         {
             string[] audioFiles = Directory.GetFiles(directory);
 
-            foreach (string audioFile in audioFiles)
+            foreach (string origAudio in audioFiles)
             {
-                Console.WriteLine("Original File: " + audioFile);
-                Guid newGuid = Guid.NewGuid();
-                string guidString = newGuid.ToString();
-                string outputFilePath = directory + @"\"+ guidString + ".wav";
-                Console.WriteLine("Converted Wav: " + outputFilePath);
-                string wavConvert = DataCleaning.buildWavConversionCommand(audioFile, outputFilePath);
+                Console.WriteLine(origAudio);
+                
+                // The new filepath to store the wav conversion of origAudio
+                string guidString = Guid.NewGuid().ToString();
+                string wavPath = directory + @"\"+ guidString + ".wav";
+
+                // Convert the origAudio in source directory to wav format
+                string wavConvert = DataCleaning.buildWavConversionCommand(origAudio, wavPath);
                 FFmpegProcessor.FFmpegExecRunner(wavConvert);
-                DeleteFile(audioFile);
-                Console.WriteLine("nanananan");
-                List<(double startTicks, double endTicks)> speechTimeStamp = await DataCleaning.ListSpeechTimeStamp(outputFilePath);
-                newGuid = Guid.NewGuid();
-                guidString = newGuid.ToString();
-                string finalDest = directory + @"\"+ guidString + ".wav";
-                Console.WriteLine(finalDest);
-                string removeSpeech = DataCleaning.buildRemovalFFmpegCommand(outputFilePath, finalDest, speechTimeStamp);
-                FFmpegProcessor.FFmpegExecRunner(removeSpeech);
-                DeleteFile(outputFilePath);
+
+                // Delete the original audio file since we have the wav version now
+                DeleteFile(origAudio);
+
+                // Get the list of timestamps for speech in the wav file
+                List<(double startTicks, double endTicks)> speechTimeStamp = await DataCleaning.ListSpeechTimeStamp(wavPath);
+
+
+                // The new filepath to store the cleaned audio
+                guidString = Guid.NewGuid().ToString();
+                string finalDest = destDirectory + @"\"+ guidString + ".wav";
+
+                // Clean the audio and write it to destination
+                if (speechTimeStamp.Count != 0)
+                {
+                    string removeSpeech = DataCleaning.buildRemovalFFmpegCommand(wavPath, finalDest, speechTimeStamp);
+                    FFmpegProcessor.FFmpegExecRunner(removeSpeech);
+                } else {
+                    File.Copy(wavPath, finalDest);
+                }
+                
+                
             }
         }
         catch (Exception ex)

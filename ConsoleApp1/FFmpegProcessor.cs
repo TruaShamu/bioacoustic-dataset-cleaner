@@ -1,5 +1,3 @@
-using Microsoft.CognitiveServices.Speech;
-using Microsoft.CognitiveServices.Speech.Audio;
 using System.Diagnostics;
 
 
